@@ -1,10 +1,10 @@
 public class BMI {
     private String name;
     private int age;
-    private double weight; // in pounds
-    private double height; // in inches
+    private double weight;
+    private double height;
 
-    /** Construct a BMI object with specified name, age, weight, and height */
+    /** Constructor with all parameters */
     public BMI(String name, int age, double weight, double height) {
         this.name = name;
         this.age = age;
@@ -12,12 +12,12 @@ public class BMI {
         this.height = height;
     }
 
-    /** Construct a BMI object with specified name, weight, height, and default age 20 */
+    /** Constructor with default age 20 */
     public BMI(String name, double weight, double height) {
         this(name, 20, weight, height);
     }
 
-    // Accessors
+    // Getters
     public String getName() {
         return name;
     }
@@ -51,5 +51,19 @@ public class BMI {
         } else {
             return "Obese";
         }
+    }
+
+    // Main Method
+    public static void main(String[] args) {
+        BMI person1 = new BMI("Ali", 22, 145, 70);
+        System.out.println("Name: " + person1.getName());
+        System.out.println("BMI: " + String.format("%.2f", person1.getBMI()));
+        System.out.println("Status: " + person1.getStatus());
+
+        BMI person2 = new BMI("Farhia", 110, 62); // Uses default age 20
+        System.out.println("\nName: " + person2.getName());
+        System.out.println("Age: " + person2.getAge());
+        System.out.println("BMI: " + String.format("%.2f", person2.getBMI()));
+        System.out.println("Status: " + person2.getStatus());
     }
 }

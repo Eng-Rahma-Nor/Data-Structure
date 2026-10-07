@@ -1,13 +1,32 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    IO.println(String.format("Hello and welcome!"));
+public class Main {
+    public static void main(String[] args) {
+        // 1. Tijaabada Loan Class
+        System.out.println("=== 1. LOAN TEST ===");
+        Loan loan = new Loan(2.5, 1, 1000);
+        System.out.println("Monthly Payment: $" + String.format("%.2f", loan.getMonthlyPayment()));
+        System.out.println("Total Payment: $" + String.format("%.2f", loan.getTotalPayment()));
+        System.out.println("Loan Date: " + loan.getLoanDate());
 
-    for (int i = 1; i <= 5; i++) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        IO.println("i = " + i);
+        // 2. Tijaabada BMI Class
+        System.out.println("\n=== 2. BMI TEST ===");
+        BMI bmi = new BMI("Ahmed", 22, 145, 70);
+        System.out.println("Name: " + bmi.getName());
+        System.out.println("BMI Value: " + String.format("%.2f", bmi.getBMI()));
+        System.out.println("Status: " + bmi.getStatus());
+
+        // 3. Tijaabada Course Class
+        System.out.println("\n=== 3. COURSE TEST ===");
+        Course course = new Course("Java Programming");
+        course.addStudent("Ali");
+        course.addStudent("Rahma");
+        course.addStudent("Mohamed");
+
+        System.out.println("Course Name: " + course.getCourseName());
+        System.out.println("Enrolled Students Count: " + course.getNumberOfStudents());
+        System.out.print("Students List: ");
+        for (int i = 0; i < course.getNumberOfStudents(); i++) {
+            System.out.print(course.getStudents()[i] + (i < course.getNumberOfStudents() - 1 ? ", " : ""));
+        }
+        System.out.println();
     }
 }
